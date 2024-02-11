@@ -19,15 +19,15 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Stack
-    screenOptions={{
+    <Stack>
+    <Stack.Screen name="index" options={{ title: 'Admin Menu' , 
       headerShown : true,
       headerRight: () => (
         <Link href={"/cart"} asChild>
           <Pressable>
             {({ pressed }) => (
               <FontAwesome
-                name="shopping-cart"
+                name="plus-square-o"
                 size={25}
                 color={Colors.light.tint}
                 style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
@@ -36,9 +36,24 @@ export default function TabLayout() {
           </Pressable>
         </Link>
       ),
-    }}
-  >
-    <Stack.Screen name="index" options={{ title: 'Menu' }} />
+    } } />
+    <Stack.Screen name="[id]" options={{ title: 'Admin Menu' , 
+      headerShown : true,
+      headerRight: () => (
+        <Link href={"/cart"} asChild>
+          <Pressable>
+            {({ pressed }) => (
+              <FontAwesome
+                name="pencil-square-o"
+                size={25}
+                color={Colors.light.tint}
+                style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+              />
+            )}
+          </Pressable>
+        </Link>
+      ),
+    } } />
   </Stack>
   );
 }

@@ -1,11 +1,14 @@
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import { Product } from '@/src/types/types'
-import { Link } from 'expo-router'
+import { Link, useSegments } from 'expo-router'
 
 const ProductItem = ({ item }: { item: Product }) => {
+    const s = useSegments();
+    console.log(s);
+    
     return (
-        <Link href={`/menu/${item.id}`} asChild>
+        <Link href={`/${s[0] === "(user)" ? "(user)" : "(admin)"}/menu/${item.id}`} asChild>
             <Pressable style={style.List}>
                 <Image source={{ uri: item.image }} height={100} width={100} />
                 <Text style={style.title}>{item.name}</Text>

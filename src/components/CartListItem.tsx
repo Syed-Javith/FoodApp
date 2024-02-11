@@ -1,9 +1,11 @@
 import { View, Text, Image, Button, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { CartItem } from '../types/types'
 import { FontAwesome } from '@expo/vector-icons'
+import { CartContext } from '../providers/CartProvider'
 
 const CartListItem = ({ cartItem }: { cartItem: CartItem }) => {
+    const { updateItem } = useContext(CartContext);
     return (
         <View style={style.ListCard} >
             <View>
@@ -21,10 +23,12 @@ const CartListItem = ({ cartItem }: { cartItem: CartItem }) => {
             <View style={style.LastPart}>
                 <FontAwesome 
                 name='plus'
+                onPress={() => updateItem(cartItem.id , 1) }
                 />
                 <Text>{cartItem.quantity}</Text>
                 <FontAwesome
                 name='minus'
+                onPress={() => updateItem(cartItem.id , -1) }
                 />
             </View>
         </View>

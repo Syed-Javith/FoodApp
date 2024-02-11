@@ -13,7 +13,7 @@ const ProductDetailPage = () => {
     const {addItem} = useContext(CartContext)
     return (
         <View>
-            <Stack.Screen options={{ title: product.name }} />
+            <Stack.Screen options={{ title: `${product.name} User` }} />
             <Image
                 source={{ uri: product.image }}
                 height={200}

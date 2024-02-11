@@ -23,6 +23,21 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
       }}>
+      <Tabs.Screen name="index" options={{ href : null ,headerShadowVisible : false }}/>
+      <Tabs.Screen name="menu" options={{ title : "Menu" ,  tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />, href: "/(user)/menu" }} />
+      <Tabs.Screen
+        name="two"
+        options={{
+          title: 'Home',
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          href : "/"
+        }}
+      />
+
+    </Tabs>
+  );
+}
+
       {/* <Tabs.Screen
         name="index"
         options={{
@@ -44,14 +59,3 @@ export default function TabLayout() {
           ),
         }}
       /> */}
-      <Tabs.Screen name="index" options={{ href: null }} />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
-}
