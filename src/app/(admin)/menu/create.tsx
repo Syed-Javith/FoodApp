@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable, Image } from 'react-native'
+import { View, Text, TextInput, Pressable, Image, Button } from 'react-native'
 import React, { useState } from 'react'
 import { useLocalSearchParams } from 'expo-router'
 import * as ImagePicker from 'expo-image-picker';
@@ -9,6 +9,22 @@ const create = () => {
     const [price, setPrice] = useState<string>("0");
 
     const [image, setImage] = useState<string | null>(null);
+
+    const create = () => {
+
+    }
+    const update = () => {
+
+    }
+    const deleteItem = () => {
+
+    }
+    const validate = () => {
+        if(name.length === 0) return false;
+        if( isNaN( Number(price) )) return false;
+        if(isUpdate) update();
+        else create();
+    }
 
     const pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -47,6 +63,15 @@ const create = () => {
                 placeholder='price'
                 value={price}
                 onChangeText={setPrice}
+                keyboardType='numeric'
+            />
+            <Button
+            title='Submit'
+            onPress={validate}
+            />
+            <Button
+            onPress={deleteItem}
+            title='delete'
             />
         </View>
     )

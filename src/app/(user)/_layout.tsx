@@ -25,6 +25,8 @@ export default function TabLayout() {
       }}>
       <Tabs.Screen name="index" options={{ href : null ,headerShadowVisible : false }}/>
       <Tabs.Screen name="menu" options={{ title : "Menu" ,  tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />, href: "/(user)/menu" }} />
+      <Tabs.Screen name="order" options={{ title : "Order" ,  tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />, href: "/(user)/order" }} />
+
       <Tabs.Screen
         name="two"
         options={{
