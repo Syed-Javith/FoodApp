@@ -23,7 +23,7 @@ export default function TabLayout() {
     <Stack.Screen name="index" options={{ title: 'Admin Menu' , 
       headerShown : true,
       headerRight: () => (
-        <Link href={"/cart"} asChild>
+        <Link href={"/(admin)/menu/create"} asChild>
           <Pressable>
             {({ pressed }) => (
               <FontAwesome
@@ -40,7 +40,7 @@ export default function TabLayout() {
     <Stack.Screen name="[id]" options={{ title: 'Admin Menu' , 
       headerShown : true,
       headerRight: () => (
-        <Link href={"/cart"} asChild>
+        <Link href={"/(admin)/menu/create"} asChild>
           <Pressable>
             {({ pressed }) => (
               <FontAwesome
