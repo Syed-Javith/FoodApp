@@ -40,7 +40,7 @@ const signIn = () => {
             </View>
             <View style={style.Btn} >
                <Link style={{ color : Colors.light.tint, fontSize : 15 , textAlign : "center" }} href={'/(auth)/signIn'}>
-                Create Account
+                Sign in
                </Link>
             </View>
         </View>

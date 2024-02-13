@@ -3,7 +3,7 @@ import React from 'react'
 import { orders } from '@/assets/data/order'
 import OrderList from '@/src/components/OrderList'
 
-const index = () => {
+const Active = () => {
   return (
     <View style={{ marginVertical : 10 }} >
       <FlatList 
@@ -14,4 +14,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Active

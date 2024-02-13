@@ -14,8 +14,11 @@ const index = () => {
       <Link href={'/(auth)/signIn'}>
         Sign In
       </Link>
+      <Link href={'/(auth)/signUp'}>
+      Sign up
+      </Link>
       <Link href={'/(user)/order/'}>
-        Sign In
+        Orders
       </Link>
     </View>
   )

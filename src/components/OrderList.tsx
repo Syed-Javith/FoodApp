@@ -4,13 +4,14 @@ import { Order } from '../types/types'
 import relativeTime from "dayjs/plugin/relativeTime"
 import dayjs from 'dayjs'
 import Colors from '../constants/Colors'
-import { Link } from 'expo-router'
+import { Link, useSegments } from 'expo-router'
 
 dayjs.extend(relativeTime)
 
 const OrderList = ({ order }: { order: Order }) => {
+  const s = useSegments();
   return (
-    <Link href={`/(user)/order/${order.id}`} asChild>
+    <Link href={`/${s[0] === '(user)' ? "(user)" : "(admin)"}/order/${order.id}`} asChild>
       <Pressable style={style.OrderList} >
         <View>
           <Text style={style.OrderHeader} >Order #{order.id}</Text>
